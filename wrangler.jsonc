@@ -11,6 +11,10 @@
   "observability": {
     "enabled": true
   },
+  "vars": {
+    "BETTER_AUTH_URL": "https://klarpakke-cloudflare.autoglassnorge.workers.dev",
+    "NEXT_PUBLIC_APP_URL": "https://klarpakke-cloudflare.autoglassnorge.workers.dev"
+  },
   "d1_databases": [
     {
       "binding": "DB",

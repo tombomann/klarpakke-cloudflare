@@ -16,11 +16,16 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@better-auth/kysely-adapter": "^1.6.20",
+    "better-auth": "^1.6.20",
+    "kysely": "^0.29.2",
+    "kysely-d1": "^0.4.0",
     "next": "^16.2.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260620.1",
     "@opennextjs/cloudflare": "^1.19.11",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",

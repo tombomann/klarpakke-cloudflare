@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "klarpakke-cloudflare",
-  "main": ".open-next/worker.js",
+  "main": "src/worker.ts",
   "compatibility_date": "2026-06-20",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
@@ -20,6 +20,35 @@
       "binding": "DB",
       "database_name": "klarpakke-cloudflare-db",
       "database_id": "9e60e891-fa8f-4c6e-8d56-80617d0d6650"
+    }
+  ],
+  "queues": {
+    "producers": [
+      {
+        "binding": "TRADE_COMMANDS_QUEUE",
+        "queue": "trade-commands-queue"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "trade-commands-queue",
+        "max_batch_size": 10,
+        "max_batch_timeout": 5
+      }
+    ]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "SESSION_DO",
+        "class_name": "SessionDO"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["SessionDO"]
     }
   ]
 }

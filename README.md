@@ -32,22 +32,13 @@ npm run type-check     # TypeScript check
 
 ## GitHub + Cloudflare Workers Builds setup
 
-Since this repo was created locally, connect it to GitHub and enable Workers Builds:
-
-1. Create a private GitHub repository named `klarpakke-cloudflare`.
-2. Add the remote and push this repo:
-   ```bash
-   git remote add origin git@github.com:<your-org>/klarpakke-cloudflare.git
-   git branch -M main
-   git push -u origin main
-   ```
-3. In the Cloudflare dashboard:
+1. In the Cloudflare dashboard:
    - Go to **Workers & Pages** → **Create** → **Workers Builds**.
-   - Connect the `klarpakke-cloudflare` GitHub repository.
+   - Connect the `tombomann/klarpakke-cloudflare` GitHub repository.
    - Build command: `npm run build`
    - Deploy command: `npx wrangler deploy`
    - Add required secrets under **Settings → Variables & Secrets** (see `.env.example` when added).
-4. Production promotion: configure manual promotion of a deployed Worker version instead of auto-deploy on `main`.
+2. Production promotion: configure manual promotion of a deployed Worker version instead of auto-deploy on `main`.
 
 ## Notes
 

@@ -10,5 +10,12 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "klarpakke-cloudflare-db",
+      "database_id": "9e60e891-fa8f-4c6e-8d56-80617d0d6650"
+    }
+  ]
 }
